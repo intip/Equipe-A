@@ -1,0 +1,4 @@
+django=django1.5
+south=south
+psycopg2=psycopg2
+PIL=PIL
