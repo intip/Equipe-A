@@ -1,31 +1,33 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Eventos - Lista</h1>
+<h1>Eventos</h1>
 
-
+{% for i in content %}
 <div class="span3">
 	<div class="well">
-	  <h2 class="text-warning">Evento 2</h2>
-	  <p><span class="label">28/06</span></p>
+	  <h2 class="text-warning">{{titulo}}</h2>
+	  <p><span class="label">{{data}}</span></p>
 	  
-	  <img src="http://lorempixel.com/230/150/sports?3" width="230" height="150" alt="Imagem" class="img-rounded" />       
+	  <img src="{{foto}}" width="230" height="150" alt="Imagem" class="img-rounded" />       
 
 	  <h3>Palestras</h3>
 
 	  <ul>
-	    <li>Palestra 1</li>
-	    <li>Palestra 2</li>
-	    <li>Palestra 3</li>
+	  	{% for p in palestra %}
+	    <li>{{nome_palestra}}</li>
+	    {% endfor %}
 	  </ul>   
 
 	  <hr> 
 	  
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+	  <p>{{descricao}}</p>
 
 	  <hr>
 
 	  <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
 	</div>
 </div>
+{% endfor %}
+
 {% endblock %}

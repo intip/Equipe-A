@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <h1 class="text-warning">Evento 1</h1>
+        <h1 class="text-warning">{{titulo}}</h1>
 
-        <p><span class="label">28/06</span></p>
+        <p><span class="label">{{data}}</span></p>
 
-        <div class="span3"><img src="http://lorempixel.com/230/150/sports?2" width="230" height="150" alt="Imagem" class="img-rounded" /></div>
-        <div class="span7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</div>
+        <div class="span3"><img src="{{content.imagem}}" width="230" height="150" alt="Imagem" class="img-rounded" /></div>
+        <div class="span7">{{descricao}}</div>
 
-        <!-- -->
+        {% for i in palestra %}
         <div class="span3">
           <div class="well">
-            <h2 class="text-warning">Palestra</h2>
+            <h2 class="text-warning">{{nome_palestra}}</h2>
 
             <h3>Palestrantes</h3>
 
             <ul>
-              <li>Palestra 1</li>
-              <li>Palestra 2</li>
-              <li>Palestra 3</li>
+              {% for p in palestrante %}
+              <li>{{nome_palestrante}}</li>
+              {% endfor %}
             </ul> 
 
 
@@ -28,13 +28,13 @@
             <h3>Participantes</h3>
 
             <ul>
-              <li>Palestra 1</li>
-              <li>Palestra 2</li>
-              <li>Palestra 3</li>
+              {% for p in participante %}
+              <li>{{nome_participante}}</li>
+              {% endfor %}
             </ul> 
           </div>
         </div>
-        <!-- -->
+        {% endfor %}
 
       </div>
 {% endblock %}
