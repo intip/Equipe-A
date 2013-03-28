@@ -8,7 +8,7 @@
         <div class="span3"><img src="{{content.imagem}}" width="230" height="150" alt="Imagem" class="img-rounded" /></div>
         <div class="span7">{{descricao}}</div>
 
-        {% for i in palestra}
+        {% for i in palestra %}
         <div class="span3">
           <div class="well">
             <h2 class="text-warning">{{nome_palestra}}</h2>
@@ -16,7 +16,7 @@
             <h3>Palestrantes</h3>
 
             <ul>
-              {% for p in palestrante}
+              {% for p in palestrante %}
               <li>{{nome_palestrante}}</li>
               {% endfor %}
             </ul> 
@@ -28,7 +28,7 @@
             <h3>Participantes</h3>
 
             <ul>
-              {% for p in participante}
+              {% for p in participante %}
               <li>{{nome_participante}}</li>
               {% endfor %}
             </ul> 
