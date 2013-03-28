@@ -5,7 +5,7 @@ class Evento(models.Model):
     descricao = models.CharField(max_length=200)
     data = models.DateField()
     titulo = models.CharField(max_length=50)
-    foto = models.ImageField(upload_to="/media/imgs/")
+    foto = models.ImageField(upload_to="media/imgs/")
 
 class Palestra(models.Model):
 
