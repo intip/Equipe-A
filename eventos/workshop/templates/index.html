@@ -1,12 +1,35 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<h1>Bootstrap starter template</h1>
-<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+<h1>Eventos</h1>
+
+{% for i in eventos %}
+
+<div class="span3">
+    <div class="well">
+        <h2 class="text-warning">{{i.titulo}}</h2>
+        <p><span class="label">{{i.data}}</span></p>
+
+        <img src="{% static i.foto.url %}" width="230" height="150" alt="Imagem" class="img-rounded" />
+
+        <h3>Palestras</h3>
+
+        <ul>
+            {% for p in palestra %}
+            <li>{{nome_palestra}}</li>
+            {% endfor %}
+        </ul>
+
+        <hr>
+
+        <p>{{descricao}}</p>
+
+        <hr>
+
+        <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
+    </div>
+</div>
+{% endfor %}
+
 {% endblock %}
 
-<ul>
-    {% for evento in eventos %}
-    <li>{{ evento.titulo }}</li>
-    {% endfor %}
-</ul>

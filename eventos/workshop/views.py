@@ -7,8 +7,6 @@ def index(request, context={}):
     """
     index for the site
     """
-    context = {'eventos': Evento.objects.all()}
+    context = {'eventos': Evento.objects.order_by('data')}
     return render(request, 'index.html', context)
 
-def evento(request):
-    pass

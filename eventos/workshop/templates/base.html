@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href=" {% static "css/bootstrap.css" %}" rel="stylesheet">
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -19,7 +19,7 @@
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
+      <script src="{% static "js/html5shiv.js" %}"></script>
     <![endif]-->
   </head>
 
@@ -36,10 +36,10 @@
           <a class="brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="{% url 'evento.workshop.index' %}">Home</a></li>
-              <li><a href="{% url 'evento.workshop.list' %}">Eventos</a></li>
+              <li class="active"><a href="{% url 'workshop' %}">Home</a></li>
+              <li><a href="{% url 'workshop' %}">Eventos</a></li>
             </ul>
-          </div><!--/.nav-collapse --
+          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
