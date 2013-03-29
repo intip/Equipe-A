@@ -1,4 +1,4 @@
-django=django1.5
-south=south
-psycopg2=psycopg2
-PIL=PIL
+django==1.5
+south
+psycopg2
+PIL

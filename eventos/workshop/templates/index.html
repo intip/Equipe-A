@@ -15,14 +15,14 @@
         <h3>Palestras</h3>
 
         <ul>
-            {% for p in palestra %}
-            <li>{{nome_palestra}}</li>
+            {% for p in i.palestra_set.all %}
+            <li>{{p.nome_palestra}}</li>
             {% endfor %}
         </ul>
 
         <hr>
 
-        <p>{{descricao}}</p>
+        <p>{{i.descricao}}</p>
 
         <hr>
 
