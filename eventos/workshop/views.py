@@ -1,10 +1,10 @@
 # coding: utf-8
 
 from django.shortcuts import render
-from models import Evento
+from models import Event, Palestra
 
 
-def index(request, context={}):
+def index(request):
     """
     index for the site
     """
