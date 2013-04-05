@@ -3,8 +3,6 @@
 from django import forms
 
 class ContactForm(forms.ModelForm):
-    class Meta:
-        model = Contact
     
     name = forms.CharField(required=True)
     email = forms.CharField()
