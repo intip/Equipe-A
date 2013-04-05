@@ -5,6 +5,7 @@ from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -17,7 +18,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('eventos.workshop.urls', namespace="workshop")),
+    url(r'^eventos/', include('eventos.workshop.urls', namespace="workshop")),
+    # url(r'^evento/.+$', include('eventos.workshop.urls', namespace="workshop")),
+    url(r'^$', "eventos.workshop.views.index", name='index'),
+    # url(r'^ordenar/titulo/', eventos.workshop.views.titulo, name='titulo'),
 )
 
 if settings.DEBUG:
