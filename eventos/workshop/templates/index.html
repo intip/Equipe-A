@@ -1,35 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Eventos</h1>
-
-{% for i in eventos %}
-
-<div class="span3">
-    <div class="well">
-        <h2 class="text-warning">{{i.titulo}}</h2>
-        <p><span class="label">{{i.data}}</span></p>
-
-        <img src="{% static i.imagem.url %}" width="230" height="150" alt="Imagem" class="img-rounded" />
-
-        <h3>Palestras</h3>
-
-        <ul>
-            {% for p in i.palestra_set.all %}
-            <li>{{p.nome_palestra}}</li>
-            {% endfor %}
-        </ul>
-
-        <hr>
-
-        <p>{{i.descricao}}</p>
-
-        <hr>
-
-        <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
+<h1>Eventos
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        Filtrar por:
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Data</a></li>
+        <li><a href="#">Alfabética</a></li>
+      </ul>
     </div>
+</h1>
+
+<div class="row-fluid">
+    {% for i in eventos %}
+
+    <div class="span3">
+        <div class="well">
+            <h2 class="text-warning">{{i.titulo}}</h2>
+            <p><span class="label">{{i.data}}</span></p>
+
+            <img src="{% static i.imagem.url %}" width="230" height="150" alt="Imagem" class="img-rounded" />
+
+            <h3>Palestras</h3>
+
+            <ul>
+                {% for p in i.palestra_set.all %}
+                <li>{{p.nome_palestra}}</li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            <p>{{i.descricao}}</p>
+
+            <hr>
+
+            <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
 {% endblock %}
 

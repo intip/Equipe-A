@@ -3,31 +3,33 @@
 {% block content %}
 <h1>Eventos</h1>
 
-{% for i in content %}
-<div class="span3">
-	<div class="well">
-	  <h2 class="text-warning">{{titulo}}</h2>
-	  <p><span class="label">{{data}}</span></p>
-	  
-	  <img src="{{foto}}" width="230" height="150" alt="Imagem" class="img-rounded" />       
+<div class="row-fluid">
+	{% for i in content %}
+	<div class="span3">
+		<div class="well">
+		  <h2 class="text-warning">{{titulo}}</h2>
+		  <p><span class="label">{{data}}</span></p>
+		  
+		  <img src="{{foto}}" width="230" height="150" alt="Imagem" class="img-rounded" />       
 
-	  <h3>Palestras</h3>
+		  <h3>Palestras</h3>
 
-	  <ul>
-	  	{% for p in palestra %}
-	    <li>{{nome_palestra}}</li>
-	    {% endfor %}
-	  </ul>   
+		  <ul>
+		  	{% for p in palestra %}
+		    <li>{{nome_palestra}}</li>
+		    {% endfor %}
+		  </ul>   
 
-	  <hr> 
-	  
-	  <p>{{descricao}}</p>
+		  <hr> 
+		  
+		  <p>{{descricao}}</p>
 
-	  <hr>
+		  <hr>
 
-	  <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
+		  <p><a class="btn btn-success btn-large" href="#">ver mais</a></p>
+		</div>
 	</div>
+	{% endfor %}
 </div>
-{% endfor %}
 
 {% endblock %}
