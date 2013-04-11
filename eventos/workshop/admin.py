@@ -18,7 +18,7 @@ class PalestraAdmin(admin.ModelAdmin):
     search_fields = ['nome_palestra']
 
 
-class Participante(admin.ModelAdmin):
+class ParticipanteAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
