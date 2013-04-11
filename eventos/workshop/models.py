@@ -6,10 +6,16 @@ class Evento(models.Model):
     titulo = models.CharField(max_length=50)
     imagem = models.ImageField(upload_to="imgs/")
 
+    def __str__(self):
+        return self.titulo
+
 
 class Palestra(models.Model):
     nome_palestra = models.CharField(max_length=50)
     evento = models.ForeignKey(Evento)
+
+    def __str__(self):
+        return self.nome_palestra
 
 
 class Participante(models.Model):
@@ -17,10 +23,16 @@ class Participante(models.Model):
     palestra = models.ForeignKey(Palestra)
     avatar = models.ImageField(upload_to="imgs/")
 
+    def __str__(self):
+        return self.nome_participante
+
 
 class Palestrante(models.Model):
     nome_palestrante = models.CharField(max_length=50)
     palestra = models.ForeignKey(Palestra)
+
+    def __str__(self):
+        return self.nome_palestrante
 
 class Contact(models.Model):
     name = models.CharField(required=True)
@@ -28,3 +40,5 @@ class Contact(models.Model):
     phone = models.CharField()
     text = models.CharField(widget=models.Textarea, required=True)
 
+    def __str__(self):
+        return self.name
