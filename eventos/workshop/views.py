@@ -13,8 +13,8 @@ def index(request, context={}):
     return render(request, 'index.html', context)
 
 def evento(request, evento, context={}):
-    context = {'eventos': Evento.objects.filter(pk=evento)}
-    return render(request, 'event_list.html', context)
+    context = {'evento': Evento.objects.get(pk=evento)}
+    return render(request, 'event_detail.html', context)
 
 def data(request, context={}):
     context = {'eventos': Evento.objects.order_by('data')}
