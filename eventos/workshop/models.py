@@ -33,3 +33,12 @@ class Palestrante(models.Model):
 
     def __str__(self):
         return self.nome_palestrante
+
+class Contact(models.Model):
+    name = models.CharField(required=True)
+    email = models.CharField()
+    phone = models.CharField()
+    text = models.CharField(widget=models.Textarea, required=True)
+
+    def __str__(self):
+        return self.name
