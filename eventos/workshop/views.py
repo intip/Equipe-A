@@ -29,5 +29,9 @@ def contact(request):
     form = ContactForm(request.POST)
     if form.is_valid():
         form.save()
+        return render(request,
+                      'contato.html',
+                      {'sucess':
+                      "Seus dados foram inseridos com sucesso ^ ^."})
     else:
-        return render(request, 'contato.html', {'contact':request.POST})
+        return render(request, 'contato.html', {'error':"Ocorreu um erro ao tentar enviar seu contato."})
