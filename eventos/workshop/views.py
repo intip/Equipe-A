@@ -12,8 +12,11 @@ def index(request, context={}):
     context = {'eventos': Evento.objects.order_by('data')}
     return render(request, 'index.html', context)
 
-def data(request, context={}):
+def evento(request, evento, context={}):
+    context = {'eventos': Evento.objects.filter(pk=evento)}
+    return render(request, 'event_list.html', context)
 
+def data(request, context={}):
     context = {'eventos': Evento.objects.order_by('data')}
     return render(request, 'index.html', context)
 
