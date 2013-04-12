@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" action='/contact/' >
         <fieldset>
 
         <!-- Form Name -->
@@ -42,8 +42,11 @@
             <textarea id="msg" name="msg"></textarea>
           </div>
         </div>
-
+        <div class="control-group">
+          <input type="submit" value="Enviar" />
+        </div>
         </fieldset>
+
         </form>
 
 {% endblock %}

@@ -27,4 +27,4 @@ def contact(request):
     if form.is_valid():
         form.save()
     else:
-        raise
+        return render(request, 'index.html', {'contact':request.POST})
