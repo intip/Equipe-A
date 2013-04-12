@@ -21,3 +21,10 @@ class Participante(models.Model):
 class Palestrante(models.Model):
     nome_palestrante = models.CharField(max_length=50)
     palestra = models.ForeignKey(Palestra)
+
+class Contact(models.Model):
+    name = forms.CharField(required=True)
+    email = forms.CharField()
+    phone = forms.CharField()
+    text = forms.CharField(widget=forms.Textarea, required=True)
+
