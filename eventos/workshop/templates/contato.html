@@ -2,12 +2,18 @@
 
 {% block content %}
 
-    <form class="form-horizontal" action='/contact/' >
+    <form class="form-horizontal" action={% url 'workshop:contact' %} method="POST" >
+        {% csrf_token %}
         <fieldset>
 
         <!-- Form Name -->
-        <legend>Form Name</legend>
-
+        <legend>Deixe seu contato</legend>
+        {% if sucess %}
+          <span>{{ sucess }}</span>
+        {% endif %}
+        {% if error %}
+          <span>{{ error }}</span>
+        {% endif %}
         <!-- Text input-->
         <div class="control-group">
           <label class="control-label">Nome</label>
@@ -39,7 +45,7 @@
         <div class="control-group">
           <label class="control-label">Texto</label>
           <div class="controls">                     
-            <textarea id="msg" name="msg"></textarea>
+            <textarea id="text" name="text"></textarea>
           </div>
         </div>
         <div class="control-group">
