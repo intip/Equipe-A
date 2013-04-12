@@ -23,8 +23,8 @@ class Palestrante(models.Model):
     palestra = models.ForeignKey(Palestra)
 
 class Contact(models.Model):
-    name = forms.CharField(required=True)
-    email = forms.CharField()
-    phone = forms.CharField()
-    text = forms.CharField(widget=forms.Textarea, required=True)
+    name = models.CharField(required=True)
+    email = models.CharField()
+    phone = models.CharField()
+    text = models.CharField(widget=models.Textarea, required=True)
 
