@@ -1,3 +1,4 @@
 django==1.5
 south
 PIL
+django-suit
